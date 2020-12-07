@@ -3,7 +3,9 @@ public class TestEvent {
   Hazard hazard1 = new Hazard("Fire", "Extinguisher, Hose, 911");
 
   public void testEventMethod(){
+    //if print statement is succesful, constructor is working
     System.out.println("Make a " + order1.name + "for $" + order1.price + ". Type " + order1.components);
+    //checks the checkComponents method
     if (checkComponents() == true){
       System.out.println("Check Order success");
     } else {

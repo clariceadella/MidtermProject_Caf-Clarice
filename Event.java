@@ -5,6 +5,7 @@ public class Event{
   String components;
   String userComponents;
 
+  //method to check userInput of components 
   public boolean checkComponents(){
     Scanner userInput = new Scanner(System.in);
     userComponents = userInput.nextLine();
@@ -16,18 +17,17 @@ public class Event{
     }
   }
 }
-
+//subclass of Event 
 class Order extends Event {
   double price;
+  //constructor 
   public Order(String nameAssignment, String componentsAssignment, double priceAssignment) {
     eventName = nameAssignment;
     components = componentsAssignment;
     price = priceAssignment;
   }
 }
-
 class Hazard extends Event {
-
   public Hazard(String name, String componentsAssignment) {
     eventName = nameAssignment;
     components = componentsAssignment;
