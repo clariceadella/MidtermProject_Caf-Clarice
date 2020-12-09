@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 public class Player{
-  String playerName;
-  //QUESTION: not sure to use double or float?
-  float profitGoal;
+  public String playerName;
+  public double profitGoal;
 
   public Player() {
     Scanner userInput = new Scanner(System.in);
@@ -14,8 +13,8 @@ public class Player{
 
     //while loop will make sure input is an integer greater than 0
     while(true){
-      if (userInput.hasNextFloat()){
-        profitGoal = userInput.nextFloat();
+      if (userInput.hasNextDouble()){
+        profitGoal = userInput.nextDouble();
        if (profitGoal > 0){
          break;
       } else {
@@ -30,7 +29,19 @@ public class Player{
     }
     //print statement will print to the 2nd decimal
     System.out.printf("$%.02f", profitGoal);
-    System.out.println("! I believe in you! The command to open shop is 'Welcome to CafeClarice.' Enter the command when you are ready to start.");
+    System.out.println("! I believe in you! Enter the command when you are ready to start.");
+
+    String userCommand;
+    while (true){
+      userCommand = userInput.nextLine();
+      if (userCommand.equals("Welcome to CafeClarice")){
+        break;
+      } else {
+        System.out.println("The command to open shop is 'Welcome to CafeClarice'");
+      }
+    }
+
+}
     
-  }
+
 }
